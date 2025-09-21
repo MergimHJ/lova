@@ -565,20 +565,20 @@
         <div class="container">
             <h2>Prête à commencer ?</h2>
             <p>Contactez-moi pour toute question ou pour un accompagnement personnalisé</p>
-            <div class="contact-info">
-                <a href="mailto:korkisilona@gmail.com" class="contact-item">
-                    <span>✉️</span>
-                    <span>korkisilona@gmail.com</span>
-                </a>
-                <a href="https://www.instagram.com/ilo.krs" class="contact-item">
-                    <span>📸</span>
-                    <span>Instagram</span>
-                </a>
-                <a href="https://www.tiktok.com/@ilona.krs" class="contact-item">
-                    <span>📱</span>
-                    <span>Tiktok</span>
-                </a>
-            </div>
+                <div class="contact-info">
+                    <a href="mailto:korkisilona@gmail.com" class="contact-item">
+                        <span>✉️</span>
+                        <span>korkisilona@gmail.com</span>
+                    </a>
+                    <a href="https://www.instagram.com/ilo.krs" class="contact-item">
+                        <span>📸</span>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@ilona.krs" class="contact-item">
+                        <span>📱</span>
+                        <span>Tiktok</span>
+                    </a>
+                </div>
         </div>
     </section>
 
@@ -589,53 +589,164 @@
         </div>
     </footer>
 
-    <script>
-        // Fonction pour gérer les achats avec PayPal
-        function buyProgram(programType, price) {
-            const loadingEl = document.getElementById(`loading-${programType}`);
-            const buttonEl = loadingEl.previousElementSibling;
-            
-            // Afficher le loading
-            buttonEl.style.display = 'none';
-            loadingEl.style.display = 'block';
-            
-            // Simuler une redirection vers PayPal
-            // En production, vous intégreriez l'API PayPal ici
-            setTimeout(() => {
-                // URL PayPal simulée - remplacez par votre vraie intégration
-                const paypalUrl = createPayPalUrl(programType, price);
-                window.location.href = paypalUrl;
-            }, 2000);
-        }
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=VOTRE_PAYPAL_CLIENT_ID&currency=EUR"></script>
+    
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-        function createPayPalUrl(programType, price) {
-            // Configuration PayPal - remplacez par vos vraies données
-            const paypalBusinessEmail = 'korkisilona@gmail.com'; // Votre email PayPal Business
-            const currency = 'EUR';
-            const returnUrl = window.location.origin + '/success.html';
-            const cancelUrl = window.location.origin + '/cancel.html';
+    <script>
+        // Configuration EmailJS - REMPLACEZ PAR VOS VRAIES CLÉS
+        const EMAILJS_PUBLIC_KEY = 'VOTRE_PUBLIC_KEY';
+        const EMAILJS_SERVICE_ID = 'VOTRE_SERVICE_ID';
+        const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID';
+        
+        // Initialiser EmailJS
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        // Configuration des programmes
+        const programData = {
+            'beginner': {
+                name: 'Programme Débutant',
+                pdfUrl: '/pdfs/programme-debutant.pdf',
+                description: 'Programme parfait pour débuter votre transformation'
+            },
+            'glutes': {
+                name: 'Programme Fessiers',
+                pdfUrl: '/pdfs/programme-fessiers.pdf',
+                description: 'Programme spécialisé pour sculpter vos fessiers'
+            },
+            'complete': {
+                name: 'Programme Complet',
+                pdfUrl: '/pdfs/programme-complet.pdf',
+                description: 'Programme complet pour une transformation totale'
+            }
+        };
+
+        // Fonction principale d'achat
+        function buyProgram(programType, price) {
+            const program = programData[programType];
             
-            const programNames = {
-                'beginner': 'Programme Débutant FIT-ILO',
-                'glutes': 'Programme Fessiers FIT-ILO',
-                'complete': 'Programme Complet FIT-ILO'
+            // Créer un modal PayPal
+            createPayPalModal(programType, price, program);
+        }
+        
+        function createPayPalModal(programType, price, program) {
+            // Créer le modal
+            const modal = document.createElement('div');
+            modal.innerHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; display: flex; align-items: center; justify-content: center;">
+                    <div style="background: #1a1a1a; padding: 30px; border-radius: 10px; max-width: 500px; width: 90%; position: relative;">
+                        <button onclick="this.closest('div').remove()" style="position: absolute; top: 10px; right: 15px; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer;">×</button>
+                        <h3 style="color: #e5e5e5; margin-bottom: 15px;">${program.name}</h3>
+                        <p style="color: #888; margin-bottom: 20px;">${program.description}</p>
+                        <p style="color: #ff6b6b; font-size: 24px; font-weight: bold; margin-bottom: 20px;">${price}€</p>
+                        <div id="paypal-button-${programType}"></div>
+                        <div id="loading-${programType}" style="display: none; text-align: center; padding: 20px;">
+                            <div style="border: 3px solid #f3f3f3; border-top: 3px solid #ff6b6b; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 0 auto 10px;"></div>
+                            <p style="color: #e5e5e5;">Traitement du paiement...</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Initialiser PayPal dans le modal
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: price.toString(),
+                                currency_code: 'EUR'
+                            },
+                            description: program.name + ' - FIT-ILO'
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    // Afficher le loading
+                    document.getElementById(`paypal-button-${programType}`).style.display = 'none';
+                    document.getElementById(`loading-${programType}`).style.display = 'block';
+                    
+                    return actions.order.capture().then(function(details) {
+                        // Paiement réussi - envoyer le PDF
+                        sendProgramEmail(programType, details.payer.email_address, program)
+                            .then(() => {
+                                // Fermer le modal et afficher succès
+                                modal.remove();
+                                showSuccessMessage(program.name, details.payer.email_address);
+                            })
+                            .catch((error) => {
+                                console.error('Erreur envoi email:', error);
+                                alert('Paiement réussi, mais erreur envoi email. Contactez-nous.');
+                                modal.remove();
+                            });
+                    });
+                },
+                onError: function(err) {
+                    console.error('Erreur PayPal:', err);
+                    alert('Erreur lors du paiement. Veuillez réessayer.');
+                },
+                onCancel: function(data) {
+                    modal.remove();
+                }
+            }).render(`#paypal-button-${programType}`);
+        }
+        
+        // Fonction pour envoyer l'email avec le programme
+        async function sendProgramEmail(programType, customerEmail, program) {
+            const downloadLink = `${window.location.origin}${program.pdfUrl}`;
+            
+            const templateParams = {
+                to_email: customerEmail,
+                program_name: program.name,
+                download_link: downloadLink,
+                customer_email: customerEmail
             };
             
-            const itemName = programNames[programType];
+            try {
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+                console.log('Email envoyé avec succès');
+                
+                // Également envoyer une notification à vous-même
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                    to_email: 'korkisilona@gmail.com',
+                    program_name: program.name,
+                    download_link: `Nouvelle vente: ${program.name}`,
+                    customer_email: `Client: ${customerEmail}`
+                });
+                
+            } catch (error) {
+                console.error('Erreur EmailJS:', error);
+                throw error;
+            }
+        }
+        
+        // Afficher message de succès
+        function showSuccessMessage(programName, email) {
+            const successModal = document.createElement('div');
+            successModal.innerHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; display: flex; align-items: center; justify-content: center;">
+                    <div style="background: #1a1a1a; padding: 40px; border-radius: 10px; max-width: 500px; width: 90%; text-align: center;">
+                        <div style="color: #4ade80; font-size: 48px; margin-bottom: 20px;">✅</div>
+                        <h3 style="color: #e5e5e5; margin-bottom: 15px;">Paiement réussi !</h3>
+                        <p style="color: #888; margin-bottom: 20px;">Votre ${programName} a été envoyé à :</p>
+                        <p style="color: #ff6b6b; font-weight: bold; margin-bottom: 30px;">${email}</p>
+                        <p style="color: #888; margin-bottom: 20px;">Vérifiez votre boîte email (et vos spams) dans les prochaines minutes.</p>
+                        <button onclick="this.closest('div').remove()" style="background: #ff6b6b; color: white; padding: 12px 24px; border: none; border-radius: 25px; cursor: pointer; font-weight: 500;">Fermer</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(successModal);
             
-            // URL PayPal avec tous les paramètres
-            const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?` +
-                `cmd=_xclick&` +
-                `business=${encodeURIComponent(paypalBusinessEmail)}&` +
-                `item_name=${encodeURIComponent(itemName)}&` +
-                `amount=${price}&` +
-                `currency_code=${currency}&` +
-                `return=${encodeURIComponent(returnUrl)}&` +
-                `cancel_return=${encodeURIComponent(cancelUrl)}&` +
-                `notify_url=${encodeURIComponent(window.location.origin + '/ipn.php')}&` +
-                `item_number=${programType}`;
-            
-            return paypalUrl;
+            // Auto-fermer après 5 secondes
+            setTimeout(() => {
+                if (successModal.parentNode) {
+                    successModal.remove();
+                }
+            }, 5000);
         }
 
         // Smooth scrolling pour les liens internes
@@ -677,3 +788,5 @@
     </script>
 </body>
 </html>
+
+
