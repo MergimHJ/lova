@@ -13,12 +13,17 @@
         <div class="nav-container">
             <a href="#" class="logo">FIT-ILO</a>
             <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#programmes">Programmes</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil" data-key="nav-home">Accueil</a></li>
+                <li><a href="#programmes" data-key="nav-programs">Programmes</a></li>
+                <li><a href="#apropos" data-key="nav-about">À propos</a></li>
+                <li><a href="#contact" data-key="nav-contact">Contact</a></li>
             </ul>
             <div class="nav-icons">
+                <div class="language-selector">
+                    <button id="lang-fr" class="lang-btn active">FR</button>
+                    <button id="lang-nl" class="lang-btn">NL</button>
+                    <button id="lang-en" class="lang-btn">EN</button>
+                </div>
                 <button>🔍</button>
                 <button>👤</button>
                 <button>🛒</button>
@@ -29,11 +34,11 @@
     <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="hero-content">
-            <h1>Transform Your Body,<br><span class="highlight">Elevate Your Mind</span></h1>
-            <p>Découvrez mes programmes personnalisés conçus pour vous accompagner dans votre transformation physique et mentale.</p>
+            <h1 data-key="hero-title">Transform Your Body,<br><span class="highlight">Elevate Your Mind</span></h1>
+            <p data-key="hero-subtitle">Découvrez mes programmes personnalisés conçus pour vous accompagner dans votre transformation physique et mentale.</p>
             <div class="hero-buttons">
-                <a href="#programmes" class="btn btn-primary">Découvrir les programmes →</a>
-                <a href="#apropos" class="btn btn-secondary">En savoir plus</a>
+                <a href="#programmes" class="btn btn-primary" data-key="hero-discover">Découvrir les programmes →</a>
+                <a href="#apropos" class="btn btn-secondary" data-key="hero-learn-more">En savoir plus</a>
             </div>
         </div>
     </section>
@@ -41,7 +46,7 @@
     <!-- Programs Section -->
     <section id="programmes" class="programs">
         <div class="container">
-            <h2 class="section-title">Mes <span class="highlight">Programmes</span></h2>
+            <h2 class="section-title" data-key="programs-title">Mes <span class="highlight">Programmes</span></h2>
             <div class="programs-grid">
                 <!-- Programme Débutant -->
                 <div class="program-card">
@@ -49,8 +54,8 @@
                         <div class="program-rating">⭐ 4.5</div>
                     </div>
                     <div class="program-info">
-                        <h3 class="program-title">Programme Débutant</h3>
-                        <p class="program-description">Idéal pour commencer votre transformation en douceur</p>
+                        <h3 class="program-title" data-key="program-beginner">Programme Débutant</h3>
+                        <p class="program-description" data-key="program-beginner-desc">Idéal pour commencer votre transformation en douceur</p>
                         <ul class="program-features">
                             <li>3 séances/semaine</li>
                             <li>Guide nutrition</li>
@@ -58,7 +63,7 @@
                         </ul>
                         <div class="program-footer">
                             <span class="program-price">29€</span>
-                            <button class="btn-discover">Découvrir</button>
+                            <button class="btn-discover" data-key="program-discover">Découvrir</button>
                         </div>
                     </div>
                 </div>
@@ -69,8 +74,8 @@
                         <div class="program-rating">⭐ 4.8 ⏱️ 8 semaines ⚡ 4.185</div>
                     </div>
                     <div class="program-info">
-                        <h3 class="program-title">Programme Fessiers</h3>
-                        <p class="program-description">Sculpter et tonifier vos fessiers efficacement</p>
+                        <h3 class="program-title" data-key="program-glutes">Programme Fessiers</h3>
+                        <p class="program-description" data-key="program-glutes-desc">Sculpter et tonifier vos fessiers efficacement</p>
                         <ul class="program-features">
                             <li>4 séances/semaine</li>
                             <li>Exercices ciblés</li>
@@ -78,7 +83,7 @@
                         </ul>
                         <div class="program-footer">
                             <span class="program-price">39€</span>
-                            <button class="btn-discover">Découvrir</button>
+                            <button class="btn-discover" data-key="program-discover">Découvrir</button>
                         </div>
                     </div>
                 </div>
@@ -89,8 +94,8 @@
                         <div class="program-rating">⭐ 5</div>
                     </div>
                     <div class="program-info">
-                        <h3 class="program-title">Programme Complet</h3>
-                        <p class="program-description">Transformation complète corps et esprit</p>
+                        <h3 class="program-title" data-key="program-complete">Programme Complet</h3>
+                        <p class="program-description" data-key="program-complete-desc">Transformation complète corps et esprit</p>
                         <ul class="program-features">
                             <li>5 séances/semaine</li>
                             <li>Coaching personnalisé</li>
@@ -98,7 +103,7 @@
                         </ul>
                         <div class="program-footer">
                             <span class="program-price">59€</span>
-                            <button class="btn-discover">Découvrir</button>
+                            <button class="btn-discover" data-key="program-discover">Découvrir</button>
                         </div>
                     </div>
                 </div>
@@ -115,16 +120,16 @@
             <div class="about-content">
                 <div class="about-image"></div>
                 <div class="about-text">
-                    <h2>Salut, je suis <span class="highlight">Ilona</span></h2>
-                    <p>Passionnée de fitness depuis plus de 3 ans, j'ai transformé ma passion en mission : vous accompagner dans votre propre transformation.</p>
-                    <p>Mon approche combine entraînement personnalisé, nutrition équilibrée et bien-être mental pour des résultats durables et épanouissants.</p>
-                    <p>Chaque programme que je crée est pensé pour vous faire progresser à votre rythme, en respectant votre corps et vos objectifs personnels.</p>
+                    <h2 data-key="about-title">Salut, je suis <span class="highlight">Ilona</span></h2>
+                    <p data-key="about-text1">Passionnée de fitness depuis plus de 3 ans, j'ai transformé ma passion en mission : vous accompagner dans votre propre transformation.</p>
+                    <p data-key="about-text2">Mon approche combine entraînement personnalisé, nutrition équilibrée et bien-être mental pour des résultats durables et épanouissants.</p>
+                    <p data-key="about-text3">Chaque programme que je crée est pensé pour vous faire progresser à votre rythme, en respectant votre corps et vos objectifs personnels.</p>
                     
                     <div class="stats">
                         <div class="stat">
                             <div class="stat-icon">👥</div>
                             <div class="stat-number">50+</div>
-                            <div class="stat-label">Clientes transformées</div>
+                            <div class="stat-label" data-key="stat-clients">Clientes transformées</div>
                         </div>
                         <div class="stat">
                             <div class="stat-icon">🏆</div>
@@ -134,7 +139,7 @@
                         <div class="stat">
                             <div class="stat-icon">🎯</div>
                             <div class="stat-number">98%</div>
-                            <div class="stat-label">Taux de satisfaction</div>
+                            <div class="stat-label" data-key="stat-satisfaction">Taux de satisfaction</div>
                         </div>
                         <div class="stat">
                             <div class="stat-icon">💜</div>
@@ -144,21 +149,21 @@
                     </div>
 
                     <div class="about-buttons">
-                        <a href="#" class="btn-outline">Mon histoire</a>
-                        <a href="#" class="btn-outline">Témoignages</a>
+                        <a href="histoire.html" class="btn-outline" data-key="nav-story">Mon histoire</a>
+                        <a href="temoignage.html" class="btn-outline" data-key="nav-testimonials">Témoignages</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script src="script/script.js"></script>
+
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>FIT-ILO</h3>
-                    <p>Transformez votre corps et votre esprit avec des programmes personnalisés conçus pour des résultats durables.</p>
+                    <p data-key="footer-description">Transformez votre corps et votre esprit avec des programmes personnalisés conçus pour des résultats durables.</p>
                     <div class="social-links">
                         <a href="#">📷</a>
                         <a href="#">📺</a>
@@ -166,35 +171,38 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Navigation</h3>
-                    <a href="#accueil">Accueil</a>
-                    <a href="#programmes">Programmes</a>
-                    <a href="#apropos">À propos</a>
-                    <a href="#contact">Contact</a>
+                    <h3 data-key="footer-nav">Navigation</h3>
+                    <a href="#accueil" data-key="nav-home">Accueil</a>
+                    <a href="#programmes" data-key="nav-programs">Programmes</a>
+                    <a href="#apropos" data-key="nav-about">À propos</a>
+                    <a href="#contact" data-key="nav-contact">Contact</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Programmes</h3>
-                    <a href="#">Débutant</a>
-                    <a href="#">Fessiers</a>
-                    <a href="#">Complet</a>
-                    <a href="#">Nutrition</a>
+                    <h3 data-key="footer-programs">Programmes</h3>
+                    <a href="#" data-key="program-beginner">Débutant</a>
+                    <a href="#" data-key="program-glutes">Fessiers</a>
+                    <a href="#" data-key="program-complete">Complet</a>
+                    <a href="#" data-key="program-nutrition">Nutrition</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <a href="korkisilona@gmail.com">✉️ korkisilona@gmail.com</a>
+                    <h3 data-key="footer-contact">Contact</h3>
+                    <a href="mailto:korkisilona@gmail.com">✉️ korkisilona@gmail.com</a>
                     <a href="tel:+33612345678">📞 +33 6 12 34 56 78</a>
                     <p>📍 Bruxelles, Belgique</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 FIT-ILO. Tous droits réservés.</p>
+                <p data-key="footer-rights">© 2025 FIT-ILO. Tous droits réservés.</p>
                 <div class="footer-links">
-                    <a href="#">Mentions légales</a>
-                    <a href="#">Confidentialité</a>
-                    <a href="#">CGV</a>
+                    <a href="#" data-key="footer-legal">Mentions légales</a>
+                    <a href="#" data-key="footer-privacy">Confidentialité</a>
+                    <a href="#" data-key="footer-terms">CGV</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script src="script/script.js"></script>
+    <script src="script/translations.js"></script>
 </body>
 </html>

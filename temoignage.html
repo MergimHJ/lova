@@ -1,11 +1,329 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Témoignages - FIT-ILO</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">FIT-ILO</a>
+            <ul class="nav-links">
+                <li><a href="index.html#accueil" data-key="nav-home">Accueil</a></li>
+                <li><a href="index.html#programmes" data-key="nav-programs">Programmes</a></li>
+                <li><a href="index.html#apropos" data-key="nav-about">À propos</a></li>
+                <li><a href="index.html#contact" data-key="nav-contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="language-selector">
+                    <button id="lang-fr" class="lang-btn active">FR</button>
+                    <button id="lang-nl" class="lang-btn">NL</button>
+                    <button id="lang-en" class="lang-btn">EN</button>
+                </div>
+                <button>🔍</button>
+                <button>👤</button>
+                <button>🛒</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Testimonials Hero -->
+    <section class="testimonials-hero">
+        <div class="container">
+            <div class="testimonials-hero-content">
+                <h1 data-key="testimonials-title">Elles ont transformé leur <span class="highlight">vie</span></h1>
+                <p data-key="testimonials-subtitle">Découvrez les histoires inspirantes de femmes qui ont choisi de prendre leur vie en main</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label" data-key="stat-clients">Clientes transformées</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label" data-key="stat-satisfaction">Taux de satisfaction</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">4.8/5</span>
+                        <span class="stat-label" data-key="stat-rating">Note moyenne</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Testimonials -->
+    <section class="featured-testimonials">
+        <div class="container">
+            <h2 class="section-title" data-key="featured-title">Témoignages <span class="highlight">vedettes</span></h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card featured">
+                    <div class="testimonial-header">
+                        <div class="client-info">
+                            <div class="client-avatar">M</div>
+                            <div class="client-details">
+                                <h3>Marie, 32 ans</h3>
+                                <p>Programme Complet - 6 mois</p>
+                            </div>
+                        </div>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <blockquote data-key="testimonial-marie">
+                        "Ilona a littéralement changé ma vie. En 6 mois, j'ai non seulement transformé mon corps mais aussi ma confiance en moi. Ses programmes sont parfaitement adaptés et son accompagnement est exceptionnel. Je me sens plus forte que jamais !"
+                    </blockquote>
+                    <div class="results">
+                        <div class="result-item">
+                            <span class="result-number">-12kg</span>
+                            <span class="result-label" data-key="result-weight">Perte de poids</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">+40%</span>
+                            <span class="result-label" data-key="result-strength">Force gagnée</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-info">
+                            <div class="client-avatar">S</div>
+                            <div class="client-details">
+                                <h3>Sophie, 28 ans</h3>
+                                <p>Programme Fessiers - 8 semaines</p>
+                            </div>
+                        </div>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <blockquote data-key="testimonial-sophie">
+                        "Le programme fessiers d'Ilona est incroyable ! En 8 semaines, j'ai vu des résultats que je n'espérais plus. Ses conseils nutrition sont un plus énorme. Je recommande à 200% !"
+                    </blockquote>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-info">
+                            <div class="client-avatar">L</div>
+                            <div class="client-details">
+                                <h3>Laura, 35 ans</h3>
+                                <p>Programme Débutant - 3 mois</p>
+                            </div>
+                        </div>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <blockquote data-key="testimonial-laura">
+                        "Parfait pour reprendre le sport en douceur. Ilona est à l'écoute et s'adapte à nos contraintes. Grâce à elle, le sport fait maintenant partie de ma routine quotidienne !"
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials -->
+    <section class="video-testimonials">
+        <div class="container">
+            <h2 class="section-title" data-key="video-title">Témoignages <span class="highlight">vidéo</span></h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button">▶️</div>
+                        <div class="video-duration">2:34</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Emma - Transformation en 4 mois</h3>
+                        <p data-key="video-emma">Découvrez comment Emma a retrouvé confiance en elle</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-button">▶️</div>
+                        <div class="video-duration">3:12</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Clara - Programme Fessiers</h3>
+                        <p data-key="video-clara">Les résultats spectaculaires de Clara en 8 semaines</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Testimonials -->
+    <section class="all-testimonials">
+        <div class="container">
+            <h2 class="section-title" data-key="all-testimonials-title">Tous les <span class="highlight">témoignages</span></h2>
+            
+            <div class="testimonials-list">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="client-info">
+                            <div class="client-avatar">A</div>
+                            <div>
+                                <h4>Amélie, 29 ans</h4>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p data-key="testimonial-amelie">"Programme débutant parfait ! Ilona explique tout très clairement et est toujours disponible pour répondre aux questions. Je me sens plus en forme que jamais."</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="client-info">
+                            <div class="client-avatar">J</div>
+                            <div>
+                                <h4>Justine, 26 ans</h4>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p data-key="testimonial-justine">"Les résultats sont au rendez-vous ! En 3 mois, j'ai complètement transformé ma silhouette. Le suivi d'Ilona est exceptionnel."</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="client-info">
+                            <div class="client-avatar">C</div>
+                            <div>
+                                <h4>Camille, 31 ans</h4>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p data-key="testimonial-camille">"Approche holistique fantastique ! Ce n'est pas qu'un programme fitness, c'est un vrai accompagnement vers une vie plus équilibrée."</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="client-info">
+                            <div class="client-avatar">N</div>
+                            <div>
+                                <h4>Nina, 24 ans</h4>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p data-key="testimonial-nina">"Grâce à Ilona, j'ai appris à aimer faire du sport. Ses programmes sont variés et jamais ennuyeux. Une coach formidable !"</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="client-info">
+                            <div class="client-avatar">V</div>
+                            <div>
+                                <h4>Valérie, 38 ans</h4>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p data-key="testimonial-valerie">"Après 2 grossesses, je pensais ne jamais retrouver ma forme. Ilona m'a prouvé le contraire ! Merci pour ce parcours incroyable."</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="client-info">
+                            <div class="client-avatar">E</div>
+                            <div>
+                                <h4>Estelle, 33 ans</h4>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p data-key="testimonial-estelle">"Programme nutrition au top ! J'ai enfin compris comment bien manger sans me priver. Les résultats parlent d'eux-mêmes."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Numbers -->
+    <section class="success-numbers">
+        <div class="container">
+            <h2 class="section-title" data-key="success-title">Nos <span class="highlight">résultats</span></h2>
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <div class="number">350kg</div>
+                    <div class="number-label" data-key="success-weight">Kilos perdus au total</div>
+                </div>
+                <div class="number-card">
+                    <div class="number">50+</div>
+                    <div class="number-label" data-key="success-clients">Femmes transformées</div>
+                </div>
+                <div class="number-card">
+                    <div class="number">95%</div>
+                    <div class="number-label" data-key="success-goals">Objectifs atteints</div>
+                </div>
+                <div class="number-card">
+                    <div class="number">100%</div>
+                    <div class="number-label" data-key="success-confidence">Confiance retrouvée</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-key="cta-join-title">Rejoignez nos success stories</h2>
+                <p data-key="cta-join-text">Votre transformation commence aujourd'hui. Choisissez le programme qui vous correspond.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#programmes" class="btn btn-primary" data-key="cta-programs">Choisir mon programme</a>
+                    <a href="index.html#contact" class="btn btn-secondary" data-key="cta-contact">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FIT-ILO</h3>
+                    <p data-key="footer-description">Transformez votre corps et votre esprit avec des programmes personnalisés conçus pour des résultats durables.</p>
+                    <div class="social-links">
+                        <a href="#">📷</a>
+                        <a href="#">📺</a>
+                        <a href="#">✉️</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 data-key="footer-nav">Navigation</h3>
+                    <a href="index.html#accueil" data-key="nav-home">Accueil</a>
+                    <a href="index.html#programmes" data-key="nav-programs">Programmes</a>
+                    <a href="index.html#apropos" data-key="nav-about">À propos</a>
+                    <a href="index.html#contact" data-key="nav-contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3 data-key="footer-programs">Programmes</h3>
+                    <a href="#" data-key="program-beginner">Débutant</a>
+                    <a href="#" data-key="program-glutes">Fessiers</a>
+                    <a href="#" data-key="program-complete">Complet</a>
+                    <a href="#" data-key="program-nutrition">Nutrition</a>
+                </div>
+                <div class="footer-section">
+                    <h3 data-key="footer-contact">Contact</h3>
+                    <a href="mailto:korkisilona@gmail.com">✉️ korkisilona@gmail.com</a>
+                    <a href="tel:+33612345678">📞 +33 6 12 34 56 78</a>
+                    <p>📍 Bruxelles, Belgique</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-key="footer-rights">© 2025 FIT-ILO. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="#" data-key="footer-legal">Mentions légales</a>
+                    <a href="#" data-key="footer-privacy">Confidentialité</a>
+                    <a href="#" data-key="footer-terms">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+    <script src="script/translations.js"></script>
 </body>
 </html>
