@@ -8,7 +8,6 @@
       name="description"
       content="Programmes fitness personnalisés par Ilona à Bruxelles"
     />
-    <link rel="icon" type="image/png" href="assets/logo/FIT-ILOv1.png">
     <style>
       * {
         margin: 0;
@@ -53,47 +52,6 @@
         text-decoration: none;
       }
 
-      .logo img {
-        height: 40px;
-      }
-
-      /* Menu burger styles */
-      .burger-menu {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        padding: 5px;
-        z-index: 1001;
-      }
-
-      .burger-line {
-        width: 25px;
-        height: 3px;
-        background-color: #e5e5e5;
-        margin: 3px 0;
-        transition: 0.3s;
-        border-radius: 2px;
-      }
-
-      .burger-menu.active .burger-line:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-      }
-
-      .burger-menu.active .burger-line:nth-child(2) {
-        opacity: 0;
-      }
-
-      .burger-menu.active .burger-line:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-      }
-
-      /* Navigation styles */
-      .nav-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-      }
-
       nav ul {
         display: flex;
         gap: 25px;
@@ -125,60 +83,6 @@
       .contact-btn:hover {
         background: #fff;
         transform: translateY(-2px);
-      }
-
-      /* Mobile navigation overlay */
-      .mobile-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(17, 17, 17, 0.98);
-        backdrop-filter: blur(10px);
-        z-index: 1000;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .mobile-nav.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .mobile-nav ul {
-        list-style: none;
-        text-align: center;
-      }
-
-      .mobile-nav li {
-        margin: 30px 0;
-      }
-
-      .mobile-nav a {
-        color: #e5e5e5;
-        text-decoration: none;
-        font-size: 24px;
-        font-weight: 500;
-        transition: color 0.3s;
-        display: block;
-        padding: 15px;
-      }
-
-      .mobile-nav a:hover {
-        color: #ff6b6b;
-      }
-
-      .mobile-nav .contact-btn {
-        font-size: 20px;
-        padding: 15px 30px;
-        margin-top: 30px;
-        display: inline-block;
       }
 
       .hero {
@@ -542,13 +446,6 @@
         padding: 60px 0 20px;
       }
 
-      .legal-footer .container {
-        width: 100%;
-        max-width: none;
-        margin: 0;
-        padding: 0 40px;
-      }
-
       .container {
         max-width: 1200px;
         margin: 0 auto;
@@ -556,42 +453,32 @@
       }
 
       .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin-bottom: 30px;
-      }
-
-      .footer-section {
-        flex: 1;
-        min-width: 200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
       }
 
       .footer-section h3 {
         color: #ff6b6b;
-        font-size: 16px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 20px;
         font-weight: 600;
       }
 
       .footer-section ul {
         list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
       }
 
       .footer-section li {
-        margin-bottom: 0;
+        margin-bottom: 10px;
       }
 
       .footer-section a {
         color: #ccc;
         text-decoration: none;
         transition: color 0.3s;
-        font-size: 13px;
+        font-size: 14px;
       }
 
       .footer-section a:hover {
@@ -600,13 +487,8 @@
 
       .footer-section p {
         color: #ccc;
-        font-size: 13px;
-        margin-bottom: 8px;
-      }
-
-      .company-info p {
-        display: block;
-        margin-bottom: 8px;
+        font-size: 14px;
+        margin-bottom: 10px;
       }
 
       .footer-bottom {
@@ -704,147 +586,10 @@
         margin-bottom: 15px;
       }
 
-      /* Media Queries pour Mobile */
       @media (max-width: 768px) {
-        .container {
-          padding: 0 20px;
-        }
-
-        /* Header mobile */
-        .header-content {
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .nav-wrapper {
-          display: none;
-        }
-
-        .burger-menu {
-          display: flex;
-        }
-
-        .mobile-nav {
-          display: flex;
-        }
-
-        /* Hero mobile */
-        .hero {
-          padding: 60px 20px;
-        }
-
-        .hero h1 {
-          font-size: 28px;
-          line-height: 1.2;
-          margin-bottom: 15px;
-        }
-
-        .hero p {
-          font-size: 16px;
-          margin-bottom: 25px;
-        }
-
-        .hero .cta-btn {
-          font-size: 16px;
-          padding: 12px 24px;
-        }
-
-        /* Section titles mobile */
-        .section-title {
-          font-size: 28px;
-          margin-bottom: 30px;
-          margin-top: 30px;
-        }
-
-        /* Programs mobile */
-        .programs-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .program-content {
-          padding: 20px;
-        }
-
-        .program-title {
-          font-size: 20px;
-        }
-
-        .program-price {
-          font-size: 28px;
-        }
-
-        /* About mobile */
-        .about {
-          padding: 60px 0;
-        }
-
-        .about-content {
+        .footer-content {
           grid-template-columns: 1fr;
           gap: 30px;
-          text-align: center;
-        }
-
-        .about-text h2 {
-          font-size: 28px;
-        }
-
-        .about-image {
-          height: 250px;
-          order: -1;
-        }
-
-        .stats {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        /* Testimonials mobile */
-        .testimonials {
-          padding: 40px 0;
-        }
-
-        .testimonial-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .testimonial-card {
-          padding: 20px;
-        }
-
-        /* Contact mobile */
-        .contact {
-          padding: 60px 0;
-        }
-
-        .contact-subtitle {
-          font-size: 16px;
-          margin-bottom: 30px;
-        }
-
-        .contact-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .contact-card {
-          padding: 25px;
-        }
-
-        /* Footer mobile */
-        .legal-footer {
-          padding: 40px 0 20px;
-        }
-
-        .footer-content {
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .footer-section a {
-          font-size: 14px;
         }
 
         .footer-bottom {
@@ -856,74 +601,35 @@
         .footer-links {
           justify-content: center;
         }
-
-        /* Modal mobile */
-        .modal-content {
-          width: 95%;
-          padding: 20px;
-          margin: 5% auto;
-          max-height: 85vh;
-        }
-
-        .modal h2 {
-          font-size: 20px;
-          padding-right: 30px;
-        }
-
-        .close {
-          top: 10px;
-          right: 15px;
-          font-size: 24px;
-        }
       }
 
-      /* Petits mobiles */
-      @media (max-width: 480px) {
+      @media (max-width: 768px) {
         .hero h1 {
-          font-size: 24px;
+          font-size: 32px;
         }
 
-        .section-title {
-          font-size: 24px;
+        .programs-grid {
+          grid-template-columns: 1fr;
         }
 
-        .about-text h2 {
-          font-size: 24px;
+        .about-content {
+          grid-template-columns: 1fr;
+          text-align: center;
         }
 
-        .contact-card .icon {
-          font-size: 30px;
+        .stats {
+          grid-template-columns: 1fr;
         }
 
-        .program-image {
-          height: 150px;
+        .header-content {
+          flex-direction: column;
+          gap: 15px;
         }
 
-        .about-image {
-          height: 200px;
-        }
-      }
-
-      /* Landscape mobile */
-      @media (max-width: 768px) and (orientation: landscape) {
-        .hero {
-          padding: 40px 20px;
-        }
-
-        .hero h1 {
-          font-size: 26px;
-        }
-
-        .mobile-nav {
-          padding: 20px;
-        }
-
-        .mobile-nav li {
-          margin: 15px 0;
-        }
-
-        .mobile-nav a {
-          font-size: 20px;
+        nav ul {
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 10px;
         }
       }
     </style>
@@ -932,47 +638,18 @@
     <header>
       <div class="container">
         <div class="header-content">
-          <a href="index.html" class="logo">
-            <img src="assets/logo/FIT-ILOv1.png" alt="FIT-ILO">
-          </a>
-
-          <!-- Navigation desktop -->
-          <div class="nav-wrapper">
-            <nav>
-              <ul>
-                <li><a href="#programs">Programmes</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#testimonials">Témoignages</a></li>
-              </ul>
-            </nav>
-            <a href="#contact" class="contact-btn">Contact</a>
-          </div>
-
-          <!-- Menu burger -->
-          <div class="burger-menu" id="burgerMenu">
-            <div class="burger-line"></div>
-            <div class="burger-line"></div>
-            <div class="burger-line"></div>
-          </div>
+          <a href="#" class="logo">FIT-ILO</a>
+          <nav>
+            <ul>
+              <li><a href="#programs">Programmes</a></li>
+              <li><a href="#about">À propos</a></li>
+              <li><a href="#testimonials">Témoignages</a></li>
+            </ul>
+          </nav>
+          <a href="#contact" class="contact-btn">Contact</a>
         </div>
       </div>
     </header>
-
-    <!-- Navigation mobile -->
-    <div class="mobile-nav" id="mobileNav">
-      <ul>
-        <li><a href="#programs" onclick="closeMobileNav()">Programmes</a></li>
-        <li><a href="#about" onclick="closeMobileNav()">À propos</a></li>
-        <li>
-          <a href="#testimonials" onclick="closeMobileNav()">Témoignages</a>
-        </li>
-        <li>
-          <a href="#contact" class="contact-btn" onclick="closeMobileNav()"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </div>
 
     <section class="hero">
       <div class="container">
@@ -1617,48 +1294,6 @@
     </div>
 
     <script>
-      // Menu burger functionality
-      const burgerMenu = document.getElementById("burgerMenu");
-      const mobileNav = document.getElementById("mobileNav");
-      let isMenuOpen = false;
-
-      burgerMenu.addEventListener("click", function () {
-        isMenuOpen = !isMenuOpen;
-
-        if (isMenuOpen) {
-          burgerMenu.classList.add("active");
-          mobileNav.classList.add("active");
-          document.body.style.overflow = "hidden";
-        } else {
-          burgerMenu.classList.remove("active");
-          mobileNav.classList.remove("active");
-          document.body.style.overflow = "auto";
-        }
-      });
-
-      // Function to close mobile navigation
-      function closeMobileNav() {
-        isMenuOpen = false;
-        burgerMenu.classList.remove("active");
-        mobileNav.classList.remove("active");
-        document.body.style.overflow = "auto";
-      }
-
-      // Close mobile nav when clicking outside
-      mobileNav.addEventListener("click", function (e) {
-        if (e.target === mobileNav) {
-          closeMobileNav();
-        }
-      });
-
-      // Close mobile nav on escape key
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && isMenuOpen) {
-          closeMobileNav();
-        }
-      });
-
-      // Modal functionality
       function openModal(modalId) {
         document.getElementById(modalId).style.display = "block";
         document.body.style.overflow = "hidden";
@@ -1688,20 +1323,6 @@
           });
           document.body.style.overflow = "auto";
         }
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
       });
     </script>
   </body>
