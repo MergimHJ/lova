@@ -138,6 +138,7 @@
         font-size: 36px;
         font-weight: 300;
         margin-bottom: 50px;
+        margin-top: 50px;
       }
 
       .programs-grid {
@@ -387,14 +388,27 @@
       /* Contact Section */
       .contact {
         padding: 80px 0;
-        background: #111;
+        background: linear-gradient(135deg, #ff6b6b, #ffa500, #0a0a0a);
         color: #fff;
         text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #111;
+        clip-path: polygon(0 100%, 100% 0, 100% 100%);
       }
 
       .contact-subtitle {
         font-size: 18px;
-        color: #aaa;
+        color: rgba(255,255,255,0.8);
         margin-bottom: 40px;
       }
 
@@ -405,12 +419,12 @@
       }
 
       .contact-card {
-        background: #1a1a1a;
+        background: rgba(26, 26, 26, 0.8);
         padding: 30px;
         border-radius: 12px;
         text-decoration: none;
         color: #fff;
-        border: 1px solid #333;
+        border: 1px solid rgba(255, 255, 255, 0.1);
         transition: transform 0.3s ease, border-color 0.3s ease;
         display: flex;
         flex-direction: column;
@@ -419,7 +433,7 @@
 
       .contact-card:hover {
         transform: translateY(-5px);
-        border-color: #ff6b6b;
+        border-color: rgba(255, 255, 255, 0.3);
       }
 
       .contact-card .icon {
@@ -430,30 +444,12 @@
       .contact-card h3 {
         font-size: 20px;
         margin-bottom: 10px;
-        color: #ff6b6b;
+        color: #fff;
       }
 
       .contact-card p {
         font-size: 16px;
-        color: #ccc;
-      }
-
-      /* Contact Section avec cassage */
-      .contact-highlight {
-        background: linear-gradient(135deg, #ff6b6b, #ffa500, #0a0a0a);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .contact-highlight::before {
-        content: "";
-        position: absolute;
-        top: -50px;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background: #111; /* couleur de la section témoignages */
-        clip-path: polygon(0 100%, 100% 0, 100% 100%);
+        color: rgba(255,255,255,0.8);
       }
 
       /* Footer */
@@ -472,7 +468,7 @@
       /* Responsive */
       @media (max-width: 768px) {
         .hero h1 {
-          font-size: 36px;
+          font-size: 32px;
         }
 
         .programs-grid {
@@ -488,28 +484,15 @@
           grid-template-columns: 1fr;
         }
 
-        .contact-info {
-          flex-direction: column;
-          gap: 20px;
-        }
-
         .header-content {
           flex-direction: column;
-          gap: 20px;
-        }
-        .hero h1 {
-          font-size: 32px;
+          gap: 15px;
         }
 
         nav ul {
           flex-direction: column;
           gap: 10px;
           margin-top: 10px;
-        }
-
-        .header-content {
-          flex-direction: column;
-          gap: 15px;
         }
       }
     </style>
@@ -667,7 +650,7 @@
         <div class="testimonial-grid">
           <div class="testimonial-card">
             <p class="testimonial-text">
-              "Grâce au programme complet, j’ai perdu 8kg et gagné une vraie
+              "Grâce au programme complet, j'ai perdu 8kg et gagné une vraie
               confiance en moi."
             </p>
             <p class="testimonial-author">— Sophie, 28 ans</p>
@@ -682,7 +665,7 @@
           <div class="testimonial-card">
             <p class="testimonial-text">
               "Le suivi nutrition est top, je mange mieux et je me sens pleine
-              d’énergie."
+              d'énergie."
             </p>
             <p class="testimonial-author">— Julie, 25 ans</p>
           </div>
@@ -691,7 +674,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact contact-highlight" id="contact">
+    <section class="contact" id="contact">
       <div class="container">
         <h2 class="section-title">Prête à commencer ?</h2>
         <p class="contact-subtitle">
