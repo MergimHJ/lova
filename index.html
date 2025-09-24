@@ -441,190 +441,191 @@
       }
 
       .legal-footer {
-            background: #0a0a0a;
-            color: #e5e5e5;
-            padding: 60px 0 20px;
-        }
+        background: #0a0a0a;
+        color: #e5e5e5;
+        padding: 60px 0 20px;
+      }
 
-        .container {
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 0 40px;
-        }
+      .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0 40px;
+      }
 
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-section {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-section h3 {
+        color: #ff6b6b;
+        font-size: 16px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .footer-section ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .footer-section li {
+        margin-bottom: 0;
+      }
+
+      .footer-section a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 13px;
+      }
+
+      .footer-section a:hover {
+        color: #ff6b6b;
+      }
+
+      .footer-section p {
+        color: #ccc;
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+
+      .company-info p {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .footer-bottom p {
+        color: #888;
+        font-size: 12px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: #888;
+        text-decoration: none;
+        font-size: 12px;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: #ff6b6b;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+      }
+
+      .modal-content {
+        background: #fff;
+        margin: 2% auto;
+        padding: 30px;
+        width: 90%;
+        max-width: 800px;
+        border-radius: 8px;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+      }
+
+      .close:hover {
+        color: #000;
+      }
+
+      .modal h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      .modal h3 {
+        color: #ff6b6b;
+        margin: 25px 0 15px;
+        font-size: 18px;
+      }
+
+      .modal p,
+      .modal li {
+        color: #666;
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+
+      .modal ul {
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 768px) {
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .footer-section h3 {
-            color: #ff6b6b;
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .footer-section ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .footer-section li {
-            margin-bottom: 0;
+          flex-direction: column;
+          gap: 20px;
         }
 
         .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 13px;
-        }
-
-        .footer-section a:hover {
-            color: #ff6b6b;
-        }
-
-        .footer-section p {
-            color: #ccc;
-            font-size: 13px;
-            margin-bottom: 8px;
-        }
-
-        .company-info p {
-            display: block;
-            margin-bottom: 8px;
+          font-size: 14px;
         }
 
         .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 20px;
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-bottom p {
-            color: #888;
-            font-size: 12px;
+          flex-direction: column;
+          text-align: center;
+          gap: 15px;
         }
 
         .footer-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+          justify-content: center;
         }
 
-        .footer-links a {
-            color: #888;
-            text-decoration: none;
-            font-size: 12px;
-            transition: color 0.3s;
+        .container {
+          padding: 0 20px;
         }
-
-        .footer-links a:hover {
-            color: #ff6b6b;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-        }
-
-        .modal-content {
-            background: #fff;
-            margin: 2% auto;
-            padding: 30px;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 8px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            top: 15px;
-            right: 25px;
-        }
-
-        .close:hover {
-            color: #000;
-        }
-
-        .modal h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .modal h3 {
-            color: #ff6b6b;
-            margin: 25px 0 15px;
-            font-size: 18px;
-        }
-
-        .modal p, .modal li {
-            color: #666;
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        .modal ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .footer-section a {
-                font-size: 14px;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .footer-links {
-                justify-content: center;
-            }
-            
-            .container {
-                padding: 0 20px;
-            }
-        }
+      }
 
       @media (max-width: 768px) {
         .hero h1 {
@@ -864,344 +865,489 @@
     </section>
 
     <footer class="legal-footer">
-    <div class="container">
+      <div class="container">
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>FIT-ILO</h3>
-                <div class="company-info">
-                    <p><strong>Ilona Korkis</strong></p>
-                    <p>Coach Fitness & Nutrition</p>
-                    <p>korkisilona@gmail.com</p>
-                    <p>@ilo.krs</p>
-                </div>
+          <div class="footer-section">
+            <h3>FIT-ILO</h3>
+            <div class="company-info">
+              <p><strong>Ilona Korkis</strong></p>
+              <p>Coach Fitness & Nutrition</p>
+              <p>korkisilona@gmail.com</p>
+              <p>@ilo.krs</p>
             </div>
-            
-            <div class="footer-section">
-                <h3>Programmes</h3>
-                <ul>
-                    <li><a href="#programs">Programme Débutant</a></li>
-                    <li><a href="#programs">Programme Fessiers</a></li>
-                    <li><a href="#programs">Programme Complet</a></li>
-                    <li><a href="#about">À propos d'Ilona</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" onclick="openModal('faq')">FAQ</a></li>
-                    <li><a href="#testimonials">Témoignages</a></li>
-                    <li><a href="#" onclick="openModal('remboursement')">Remboursement</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Informations légales</h3>
-                <ul>
-                    <li><a href="#" onclick="openModal('mentions')">Mentions légales</a></li>
-                    <li><a href="#" onclick="openModal('cgv')">Conditions générales</a></li>
-                    <li><a href="#" onclick="openModal('confidentialite')">Confidentialité</a></li>
-                    <li><a href="#" onclick="openModal('cookies')">Cookies</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 FIT-ILO - Ilona Korkis. Tous droits réservés.</p>
-            <div class="footer-links">
-                <a href="#" onclick="openModal('mentions')">Mentions légales</a>
-                <a href="#" onclick="openModal('confidentialite')">Confidentialité</a>
-                <a href="#" onclick="openModal('cookies')">Cookies</a>
-                <a href="#" onclick="openModal('cgv')">CGV</a>
-            </div>
-        </div>
-    </div>
-</footer>
+          </div>
 
-<!-- Modals -->
-<div id="mentions" class="modal">
-    <div class="modal-content">
+          <div class="footer-section">
+            <h3>Programmes</h3>
+            <ul>
+              <li><a href="#programs">Programme Débutant</a></li>
+              <li><a href="#programs">Programme Fessiers</a></li>
+              <li><a href="#programs">Programme Complet</a></li>
+              <li><a href="#about">À propos d'Ilona</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#" onclick="openModal('faq')">FAQ</a></li>
+              <li><a href="#testimonials">Témoignages</a></li>
+              <li>
+                <a href="#" onclick="openModal('remboursement')"
+                  >Remboursement</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Informations légales</h3>
+            <ul>
+              <li>
+                <a href="#" onclick="openModal('mentions')">Mentions légales</a>
+              </li>
+              <li>
+                <a href="#" onclick="openModal('cgv')">Conditions générales</a>
+              </li>
+              <li>
+                <a href="#" onclick="openModal('confidentialite')"
+                  >Confidentialité</a
+                >
+              </li>
+              <li><a href="#" onclick="openModal('cookies')">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 FIT-ILO - Ilona Korkis. Tous droits réservés.</p>
+          <div class="footer-links">
+            <a href="#" onclick="openModal('mentions')">Mentions légales</a>
+            <a href="#" onclick="openModal('confidentialite')"
+              >Confidentialité</a
+            >
+            <a href="#" onclick="openModal('cookies')">Cookies</a>
+            <a href="#" onclick="openModal('cgv')">CGV</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="mentions" class="modal">
+      <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Mentions légales</h2>
-        
-        <h3>1. Éditeur du site</h3>
-        <p><strong>Nom :</strong> Ilona Korkis<br>
-        <strong>Activité :</strong> Coach fitness et nutrition<br>
-        <strong>Email :</strong> korkisilona@gmail.com<br>
-        <strong>Adresse :</strong> Bruxelles, Belgique</p>
-        
-        <p><em>Note : Si vous êtes inscrite comme indépendante, ajoutez votre numéro d'entreprise BCE ici.</em></p>
-        
-        <h3>2. Hébergement</h3>
-        <p>Site hébergé par votre prestataire d'hébergement web.<br>
-        <em>À compléter avec les informations de votre hébergeur.</em></p>
-        
-        <h3>3. Propriété intellectuelle</h3>
-        <p>L'ensemble des contenus présents sur ce site (textes, images, vidéos, programmes d'entraînement) sont la propriété exclusive d'Ilona Korkis et sont protégés par les droits d'auteur.</p>
-        
-        <h3>4. Responsabilité</h3>
-        <p>Les programmes proposés sont des conseils généraux. Il est recommandé de consulter un médecin avant de commencer tout programme d'exercices.</p>
-        
-        <h3>5. Contact</h3>
-        <p>Pour toute question relative aux mentions légales, contactez-nous à : korkisilona@gmail.com</p>
-    </div>
-</div>
 
-<div id="cgv" class="modal">
-    <div class="modal-content">
+        <h3>1. Éditeur du site</h3>
+        <p>
+          <strong>Nom :</strong> Ilona Korkis<br />
+          <strong>Activité :</strong> Coach fitness et nutrition<br />
+          <strong>Email :</strong> korkisilona@gmail.com<br />
+          <strong>Adresse :</strong> Bruxelles, Belgique
+        </p>
+
+        <p>
+          <em
+            >Note : Si vous êtes inscrite comme indépendante, ajoutez votre
+            numéro d'entreprise BCE ici.</em
+          >
+        </p>
+
+        <h3>2. Hébergement</h3>
+        <p>
+          Site hébergé par votre prestataire d'hébergement web.<br />
+          <em>À compléter avec les informations de votre hébergeur.</em>
+        </p>
+
+        <h3>3. Propriété intellectuelle</h3>
+        <p>
+          L'ensemble des contenus présents sur ce site (textes, images, vidéos,
+          programmes d'entraînement) sont la propriété exclusive d'Ilona Korkis
+          et sont protégés par les droits d'auteur.
+        </p>
+
+        <h3>4. Responsabilité</h3>
+        <p>
+          Les programmes proposés sont des conseils généraux. Il est recommandé
+          de consulter un médecin avant de commencer tout programme d'exercices.
+        </p>
+
+        <h3>5. Contact</h3>
+        <p>
+          Pour toute question relative aux mentions légales, contactez-nous à :
+          korkisilona@gmail.com
+        </p>
+      </div>
+    </div>
+
+    <div id="cgv" class="modal">
+      <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Conditions générales de vente</h2>
-        
-        <h3>Article 1 - Objet</h3>
-        <p>Les présentes conditions générales régissent la vente des programmes fitness digitaux proposés par Ilona Korkis via le site FIT-ILO.</p>
-        
-        <h3>Article 2 - Prix</h3>
-        <p>Les prix sont indiqués en euros, toutes taxes comprises. FIT-ILO se réserve le droit de modifier ses prix à tout moment.</p>
-        
-        <h3>Article 3 - Commande et paiement</h3>
-        <p>La commande est ferme et définitive dès validation du paiement. Le paiement s'effectue par carte bancaire via notre système sécurisé.</p>
-        
-        <h3>Article 4 - Livraison</h3>
-        <p>Les programmes digitaux sont livrés immédiatement après paiement par email à l'adresse indiquée lors de la commande.</p>
-        
-        <h3>Article 5 - Droit de rétractation</h3>
-        <p>Conformément à l'article VI.53 du Code de droit économique belge, vous disposez d'un délai de 14 jours pour exercer votre droit de rétractation, sauf si vous avez expressément renoncé à ce droit pour les contenus numériques.</p>
-        
-        <h3>Article 6 - Garantie satisfait ou remboursé</h3>
-        <p>Nous proposons une garantie de satisfaction de 30 jours. Si vous n'êtes pas satisfaite, contactez-nous pour un remboursement.</p>
-        
-        <h3>Article 7 - Responsabilité</h3>
-        <p>L'utilisation des programmes se fait sous votre propre responsabilité. Il est recommandé de consulter un professionnel de santé avant tout programme d'exercices.</p>
-        
-        <h3>Article 8 - Propriété intellectuelle</h3>
-        <p>Les programmes sont protégés par le droit d'auteur. Toute reproduction ou diffusion est interdite sans autorisation.</p>
-        
-        <h3>Article 9 - Données personnelles</h3>
-        <p>Vos données sont traitées conformément à notre politique de confidentialité et au RGPD.</p>
-        
-        <h3>Article 10 - Droit applicable</h3>
-        <p>Les présentes conditions sont régies par le droit belge. Tout litige relève de la compétence des tribunaux de Bruxelles.</p>
-    </div>
-</div>
 
-<div id="confidentialite" class="modal">
-    <div class="modal-content">
+        <h3>Article 1 - Objet</h3>
+        <p>
+          Les présentes conditions générales régissent la vente des programmes
+          fitness digitaux proposés par Ilona Korkis via le site FIT-ILO.
+        </p>
+
+        <h3>Article 2 - Prix</h3>
+        <p>
+          Les prix sont indiqués en euros, toutes taxes comprises. FIT-ILO se
+          réserve le droit de modifier ses prix à tout moment.
+        </p>
+
+        <h3>Article 3 - Commande et paiement</h3>
+        <p>
+          La commande est ferme et définitive dès validation du paiement. Le
+          paiement s'effectue par carte bancaire via notre système sécurisé.
+        </p>
+
+        <h3>Article 4 - Livraison</h3>
+        <p>
+          Les programmes digitaux sont livrés immédiatement après paiement par
+          email à l'adresse indiquée lors de la commande.
+        </p>
+
+        <h3>Article 5 - Droit de rétractation</h3>
+        <p>
+          Conformément à l'article VI.53 du Code de droit économique belge, vous
+          disposez d'un délai de 14 jours pour exercer votre droit de
+          rétractation, sauf si vous avez expressément renoncé à ce droit pour
+          les contenus numériques.
+        </p>
+
+        <h3>Article 6 - Garantie satisfait ou remboursé</h3>
+        <p>
+          Nous proposons une garantie de satisfaction de 30 jours. Si vous
+          n'êtes pas satisfaite, contactez-nous pour un remboursement.
+        </p>
+
+        <h3>Article 7 - Responsabilité</h3>
+        <p>
+          L'utilisation des programmes se fait sous votre propre responsabilité.
+          Il est recommandé de consulter un professionnel de santé avant tout
+          programme d'exercices.
+        </p>
+
+        <h3>Article 8 - Propriété intellectuelle</h3>
+        <p>
+          Les programmes sont protégés par le droit d'auteur. Toute reproduction
+          ou diffusion est interdite sans autorisation.
+        </p>
+
+        <h3>Article 9 - Données personnelles</h3>
+        <p>
+          Vos données sont traitées conformément à notre politique de
+          confidentialité et au RGPD.
+        </p>
+
+        <h3>Article 10 - Droit applicable</h3>
+        <p>
+          Les présentes conditions sont régies par le droit belge. Tout litige
+          relève de la compétence des tribunaux de Bruxelles.
+        </p>
+      </div>
+    </div>
+
+    <div id="confidentialite" class="modal">
+      <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Politique de confidentialité</h2>
         <p><em>Conforme au RGPD - Dernière mise à jour : janvier 2025</em></p>
-        
+
         <h3>1. Responsable du traitement</h3>
-        <p><strong>Ilona Korkis</strong><br>
-        Email : korkisilona@gmail.com<br>
-        Adresse : Bruxelles, Belgique</p>
-        
+        <p>
+          <strong>Ilona Korkis</strong><br />
+          Email : korkisilona@gmail.com<br />
+          Adresse : Bruxelles, Belgique
+        </p>
+
         <h3>2. Données collectées</h3>
         <p>Nous collectons les données suivantes :</p>
         <ul>
-            <li><strong>Données d'identification :</strong> nom, prénom, email</li>
-            <li><strong>Données de paiement :</strong> traitées par notre prestataire sécurisé</li>
-            <li><strong>Données de navigation :</strong> cookies, adresse IP</li>
-            <li><strong>Données de communication :</strong> messages, questions</li>
+          <li>
+            <strong>Données d'identification :</strong> nom, prénom, email
+          </li>
+          <li>
+            <strong>Données de paiement :</strong> traitées par notre
+            prestataire sécurisé
+          </li>
+          <li><strong>Données de navigation :</strong> cookies, adresse IP</li>
+          <li>
+            <strong>Données de communication :</strong> messages, questions
+          </li>
         </ul>
-        
+
         <h3>3. Finalités du traitement</h3>
         <p>Vos données sont utilisées pour :</p>
         <ul>
-            <li>Traitement et livraison de votre commande</li>
-            <li>Support client et communication</li>
-            <li>Amélioration de nos services</li>
-            <li>Respect de nos obligations légales</li>
+          <li>Traitement et livraison de votre commande</li>
+          <li>Support client et communication</li>
+          <li>Amélioration de nos services</li>
+          <li>Respect de nos obligations légales</li>
         </ul>
-        
+
         <h3>4. Base légale</h3>
         <p>Le traitement de vos données est basé sur :</p>
         <ul>
-            <li>L'exécution du contrat (livraison des programmes)</li>
-            <li>Votre consentement (newsletter, cookies)</li>
-            <li>Nos intérêts légitimes (amélioration des services)</li>
+          <li>L'exécution du contrat (livraison des programmes)</li>
+          <li>Votre consentement (newsletter, cookies)</li>
+          <li>Nos intérêts légitimes (amélioration des services)</li>
         </ul>
-        
+
         <h3>5. Conservation des données</h3>
         <p>Vos données sont conservées :</p>
         <ul>
-            <li>Données de commande : 10 ans (obligations comptables)</li>
-            <li>Données de contact : jusqu'à désabonnement</li>
-            <li>Cookies : 13 mois maximum</li>
+          <li>Données de commande : 10 ans (obligations comptables)</li>
+          <li>Données de contact : jusqu'à désabonnement</li>
+          <li>Cookies : 13 mois maximum</li>
         </ul>
-        
+
         <h3>6. Vos droits</h3>
         <p>Vous disposez des droits suivants :</p>
         <ul>
-            <li>Droit d'accès à vos données</li>
-            <li>Droit de rectification</li>
-            <li>Droit à l'effacement</li>
-            <li>Droit à la limitation du traitement</li>
-            <li>Droit à la portabilité</li>
-            <li>Droit d'opposition</li>
-            <li>Droit de retirer votre consentement</li>
+          <li>Droit d'accès à vos données</li>
+          <li>Droit de rectification</li>
+          <li>Droit à l'effacement</li>
+          <li>Droit à la limitation du traitement</li>
+          <li>Droit à la portabilité</li>
+          <li>Droit d'opposition</li>
+          <li>Droit de retirer votre consentement</li>
         </ul>
         <p>Pour exercer vos droits : korkisilona@gmail.com</p>
-        
-        <h3>7. Sécurité</h3>
-        <p>Nous mettons en place des mesures techniques et organisationnelles pour protéger vos données contre tout accès non autorisé.</p>
-        
-        <h3>8. Transferts de données</h3>
-        <p>Vos données peuvent être transférées à nos prestataires techniques (paiement, hébergement) dans l'UE ou dans des pays disposant d'une décision d'adéquation.</p>
-        
-        <h3>9. Réclamation</h3>
-        <p>Vous pouvez introduire une réclamation auprès de l'Autorité de protection des données belge : <a href="https://www.autoriteprotectiondonnees.be" target="_blank">www.autoriteprotectiondonnees.be</a></p>
-    </div>
-</div>
 
-<div id="cookies" class="modal">
-    <div class="modal-content">
+        <h3>7. Sécurité</h3>
+        <p>
+          Nous mettons en place des mesures techniques et organisationnelles
+          pour protéger vos données contre tout accès non autorisé.
+        </p>
+
+        <h3>8. Transferts de données</h3>
+        <p>
+          Vos données peuvent être transférées à nos prestataires techniques
+          (paiement, hébergement) dans l'UE ou dans des pays disposant d'une
+          décision d'adéquation.
+        </p>
+
+        <h3>9. Réclamation</h3>
+        <p>
+          Vous pouvez introduire une réclamation auprès de l'Autorité de
+          protection des données belge :
+          <a href="https://www.autoriteprotectiondonnees.be" target="_blank"
+            >www.autoriteprotectiondonnees.be</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div id="cookies" class="modal">
+      <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Politique des cookies</h2>
-        
+
         <h3>Qu'est-ce qu'un cookie ?</h3>
-        <p>Un cookie est un petit fichier texte déposé sur votre ordinateur lors de votre visite sur notre site web.</p>
-        
+        <p>
+          Un cookie est un petit fichier texte déposé sur votre ordinateur lors
+          de votre visite sur notre site web.
+        </p>
+
         <h3>Types de cookies utilisés</h3>
-        
+
         <h4>Cookies essentiels (obligatoires)</h4>
         <p>Ces cookies sont nécessaires au fonctionnement du site :</p>
         <ul>
-            <li>Cookies de session pour maintenir votre connexion</li>
-            <li>Cookies de sécurité pour protéger contre les attaques</li>
-            <li>Cookies de panier d'achat</li>
+          <li>Cookies de session pour maintenir votre connexion</li>
+          <li>Cookies de sécurité pour protéger contre les attaques</li>
+          <li>Cookies de panier d'achat</li>
         </ul>
-        
+
         <h4>Cookies analytiques (optionnels)</h4>
         <p>Avec votre consentement, nous utilisons :</p>
         <ul>
-            <li><strong>Google Analytics :</strong> pour analyser le trafic du site</li>
-            <li>Conservation : 26 mois</li>
-            <li>Finalité : améliorer l'expérience utilisateur</li>
+          <li>
+            <strong>Google Analytics :</strong> pour analyser le trafic du site
+          </li>
+          <li>Conservation : 26 mois</li>
+          <li>Finalité : améliorer l'expérience utilisateur</li>
         </ul>
-        
+
         <h4>Cookies de réseaux sociaux (optionnels)</h4>
         <ul>
-            <li><strong>Instagram/Facebook :</strong> pour l'intégration des réseaux sociaux</li>
-            <li>Conservation : 2 ans</li>
+          <li>
+            <strong>Instagram/Facebook :</strong> pour l'intégration des réseaux
+            sociaux
+          </li>
+          <li>Conservation : 2 ans</li>
         </ul>
-        
+
         <h3>Gestion des cookies</h3>
         <p>Vous pouvez :</p>
         <ul>
-            <li>Accepter ou refuser les cookies via notre bandeau de consentement</li>
-            <li>Modifier vos préférences à tout moment</li>
-            <li>Supprimer les cookies via votre navigateur</li>
+          <li>
+            Accepter ou refuser les cookies via notre bandeau de consentement
+          </li>
+          <li>Modifier vos préférences à tout moment</li>
+          <li>Supprimer les cookies via votre navigateur</li>
         </ul>
-        
+
         <h3>Configuration par navigateur</h3>
         <p>Vous pouvez configurer votre navigateur pour :</p>
         <ul>
-            <li><strong>Chrome :</strong> Paramètres > Confidentialité et sécurité > Cookies</li>
-            <li><strong>Firefox :</strong> Préférences > Vie privée et sécurité</li>
-            <li><strong>Safari :</strong> Préférences > Confidentialité</li>
-            <li><strong>Edge :</strong> Paramètres > Cookies et autorisations de site</li>
+          <li>
+            <strong>Chrome :</strong> Paramètres > Confidentialité et sécurité >
+            Cookies
+          </li>
+          <li>
+            <strong>Firefox :</strong> Préférences > Vie privée et sécurité
+          </li>
+          <li><strong>Safari :</strong> Préférences > Confidentialité</li>
+          <li>
+            <strong>Edge :</strong> Paramètres > Cookies et autorisations de
+            site
+          </li>
         </ul>
-        
-        <h3>Contact</h3>
-        <p>Pour toute question sur notre politique des cookies : korkisilona@gmail.com</p>
-    </div>
-</div>
 
-<div id="remboursement" class="modal">
-    <div class="modal-content">
+        <h3>Contact</h3>
+        <p>
+          Pour toute question sur notre politique des cookies :
+          korkisilona@gmail.com
+        </p>
+      </div>
+    </div>
+
+    <div id="remboursement" class="modal">
+      <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Politique de remboursement</h2>
-        
+
         <h3>Garantie satisfait ou remboursé 30 jours</h3>
-        <p>Chez FIT-ILO, nous sommes convaincues de la qualité de nos programmes. C'est pourquoi nous offrons une garantie de satisfaction de 30 jours.</p>
-        
+        <p>
+          Chez FIT-ILO, nous sommes convaincues de la qualité de nos programmes.
+          C'est pourquoi nous offrons une garantie de satisfaction de 30 jours.
+        </p>
+
         <h3>Conditions de remboursement</h3>
         <ul>
-            <li>Demande dans les 30 jours suivant l'achat</li>
-            <li>Avoir suivi le programme pendant au moins 2 semaines</li>
-            <li>Fournir un retour constructif sur votre expérience</li>
+          <li>Demande dans les 30 jours suivant l'achat</li>
+          <li>Avoir suivi le programme pendant au moins 2 semaines</li>
+          <li>Fournir un retour constructif sur votre expérience</li>
         </ul>
-        
+
         <h3>Comment demander un remboursement ?</h3>
         <p>Contactez-nous à <strong>korkisilona@gmail.com</strong> avec :</p>
         <ul>
-            <li>Votre nom et email de commande</li>
-            <li>Le programme concerné</li>
-            <li>La raison de votre demande</li>
-            <li>Vos retours sur le programme</li>
+          <li>Votre nom et email de commande</li>
+          <li>Le programme concerné</li>
+          <li>La raison de votre demande</li>
+          <li>Vos retours sur le programme</li>
         </ul>
-        
-        <h3>Délai de traitement</h3>
-        <p>Les remboursements sont traités sous 5-7 jours ouvrables. Le montant sera recrédité sur votre compte bancaire sous 5-10 jours supplémentaires.</p>
-        
-        <h3>Exceptions</h3>
-        <p>Les programmes en promotion ou offerts ne sont pas remboursables, sauf défaut manifeste.</p>
-    </div>
-</div>
 
-<div id="faq" class="modal">
-    <div class="modal-content">
+        <h3>Délai de traitement</h3>
+        <p>
+          Les remboursements sont traités sous 5-7 jours ouvrables. Le montant
+          sera recrédité sur votre compte bancaire sous 5-10 jours
+          supplémentaires.
+        </p>
+
+        <h3>Exceptions</h3>
+        <p>
+          Les programmes en promotion ou offerts ne sont pas remboursables, sauf
+          défaut manifeste.
+        </p>
+      </div>
+    </div>
+
+    <div id="faq" class="modal">
+      <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Questions fréquemment posées</h2>
-        
+
         <h3>💳 Comment se déroule le paiement ?</h3>
-        <p>Le paiement est sécurisé et accepte les cartes bancaires, PayPal et Bancontact. Vous recevrez votre programme immédiatement après confirmation du paiement.</p>
-        
+        <p>
+          Le paiement est sécurisé et accepte les cartes bancaires, PayPal et
+          Bancontact. Vous recevrez votre programme immédiatement après
+          confirmation du paiement.
+        </p>
+
         <h3>📱 Sur quels supports puis-je consulter mon programme ?</h3>
-        <p>Nos programmes sont compatibles avec tous les appareils : smartphone, tablette, ordinateur. Vous recevrez un lien de téléchargement par email.</p>
-        
+        <p>
+          Nos programmes sont compatibles avec tous les appareils : smartphone,
+          tablette, ordinateur. Vous recevrez un lien de téléchargement par
+          email.
+        </p>
+
         <h3>🏋️‍♀️ Ai-je besoin d'équipement spécialisé ?</h3>
-        <p>La plupart de nos exercices peuvent se faire à la maison avec un minimum d'équipement. Chaque programme précise le matériel nécessaire.</p>
-        
+        <p>
+          La plupart de nos exercices peuvent se faire à la maison avec un
+          minimum d'équipement. Chaque programme précise le matériel nécessaire.
+        </p>
+
         <h3>📞 Comment obtenir de l'aide ?</h3>
-        <p>Ilona est disponible par email (korkisilona@gmail.com) et sur Instagram (@ilo.krs) pour répondre à toutes vos questions.</p>
-        
+        <p>
+          Ilona est disponible par email (korkisilona@gmail.com) et sur
+          Instagram (@ilo.krs) pour répondre à toutes vos questions.
+        </p>
+
         <h3>🎯 Les programmes conviennent-ils aux débutantes ?</h3>
-        <p>Oui ! Le programme débutant est spécialement conçu pour celles qui commencent. Chaque exercice est expliqué étape par étape.</p>
-        
+        <p>
+          Oui ! Le programme débutant est spécialement conçu pour celles qui
+          commencent. Chaque exercice est expliqué étape par étape.
+        </p>
+
         <h3>⏱️ Combien de temps durent les séances ?</h3>
-        <p>Les séances durent entre 30 et 60 minutes selon le programme choisi et votre niveau.</p>
-        
+        <p>
+          Les séances durent entre 30 et 60 minutes selon le programme choisi et
+          votre niveau.
+        </p>
+
         <h3>🔄 Puis-je refaire un programme ?</h3>
-        <p>Absolument ! Une fois acheté, le programme est à vous à vie. Vous pouvez le recommencer autant de fois que vous le souhaitez.</p>
-        
+        <p>
+          Absolument ! Une fois acheté, le programme est à vous à vie. Vous
+          pouvez le recommencer autant de fois que vous le souhaitez.
+        </p>
+
         <h3>👥 Y a-t-il une communauté ?</h3>
-        <p>Rejoignez notre communauté Instagram @ilo.krs pour partager votre progression et échanger avec d'autres participantes !</p>
+        <p>
+          Rejoignez notre communauté Instagram @ilo.krs pour partager votre
+          progression et échanger avec d'autres participantes !
+        </p>
+      </div>
     </div>
-</div>
 
-<script>
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = "block";
-    document.body.style.overflow = "hidden";
-}
+    <script>
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+        document.body.style.overflow = "hidden";
+      }
 
-// Close modal when clicking the X
-document.querySelectorAll('.close').forEach(closeBtn => {
-    closeBtn.onclick = function() {
-        this.parentElement.parentElement.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-});
+      // Close modal when clicking the X
+      document.querySelectorAll(".close").forEach((closeBtn) => {
+        closeBtn.onclick = function () {
+          this.parentElement.parentElement.style.display = "none";
+          document.body.style.overflow = "auto";
+        };
+      });
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-        event.target.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-}
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        if (event.target.classList.contains("modal")) {
+          event.target.style.display = "none";
+          document.body.style.overflow = "auto";
+        }
+      };
 
-// Escape key closes modal
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        document.querySelectorAll('.modal').forEach(modal => {
+      // Escape key closes modal
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          document.querySelectorAll(".modal").forEach((modal) => {
             modal.style.display = "none";
-        });
-        document.body.style.overflow = "auto";
-    }
-});
-</script>
+          });
+          document.body.style.overflow = "auto";
+        }
+      });
+    </script>
   </body>
 </html>
