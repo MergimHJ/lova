@@ -8,7 +8,7 @@
       name="description"
       content="Programmes fitness personnalisés par Ilona à Bruxelles"
     />
-    <link rel="icon" type="image/png" href="assets/logo/FIT-ILOv1.png">
+    <link rel="icon" type="image/png" href="assets/logo/FIT-ILOv1.png" />
     <style>
       * {
         margin: 0;
@@ -933,7 +933,7 @@
       <div class="container">
         <div class="header-content">
           <a href="index.html" class="logo">
-            <img src="assets/logo/FIT-ILOv1.png" alt="FIT-ILO">
+            <img src="assets/logo/FIT-ILOv1.png" alt="FIT-ILO" />
           </a>
 
           <!-- Navigation desktop -->
@@ -1007,7 +1007,9 @@
               <div class="program-price">29<span class="currency">€</span></div>
               <button
                 class="buy-btn"
-                onclick="alert('Fonctionnalité de paiement à configurer')"
+                data-price="29"
+                data-program="Programme Débutant"
+                onclick="buyProgram(this)"
               >
                 Acheter maintenant
               </button>
@@ -1030,7 +1032,9 @@
               <div class="program-price">39<span class="currency">€</span></div>
               <button
                 class="buy-btn"
-                onclick="alert('Fonctionnalité de paiement à configurer')"
+                data-price="39"
+                data-program="Programme Fessiers"
+                onclick="buyProgram(this)"
               >
                 Acheter maintenant
               </button>
@@ -1053,7 +1057,9 @@
               <div class="program-price">59<span class="currency">€</span></div>
               <button
                 class="buy-btn"
-                onclick="alert('Fonctionnalité de paiement à configurer')"
+                data-price="59"
+                data-program="Programme Complet"
+                onclick="buyProgram(this)"
               >
                 Acheter maintenant
               </button>
@@ -1616,7 +1622,61 @@
       </div>
     </div>
 
+    <!-- Stripe JS -->
+    <script src="https://js.stripe.com/v3/"></script>
+
     <script>
+      // Configuration Stripe - REMPLACEZ par votre clé publique
+      const stripe = Stripe('pk_test_VOTRE_CLE_PUBLIQUE_ICI');
+      
+      // Fonction pour acheter un programme
+      async function buyProgram(button) {
+        const price = button.getAttribute('data-price');
+        const program = button.getAttribute('data-program');
+        
+        // Désactiver le bouton pendant le traitement
+        button.disabled = true;
+        button.textContent = 'Traitement...';
+        
+        try {
+          // Appel au serveur pour créer la session de paiement
+          const response = await fetch('/create-checkout-session', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              price: parseInt(price),
+              programName: program
+            })
+          });
+          
+          if (!response.ok) {
+            throw new Error('Erreur réseau');
+          }
+          
+          const session = await response.json();
+          
+          // Rediriger vers Stripe Checkout
+          const result = await stripe.redirectToCheckout({
+            sessionId: session.id
+          });
+          
+          if (result.error) {
+            console.error('Erreur Stripe:', result.error);
+            alert('Erreur lors du paiement: ' + result.error.message);
+          }
+          
+        } catch (error) {
+          console.error('Erreur:', error);
+          alert('Une erreur est survenue. Veuillez réessayer ou contactez le support.');
+        } finally {
+          // Réactiver le bouton
+          button.disabled = false;
+          button.textContent = 'Acheter maintenant';
+        }
+      }
+
       // Menu burger functionality
       const burgerMenu = document.getElementById("burgerMenu");
       const mobileNav = document.getElementById("mobileNav");
